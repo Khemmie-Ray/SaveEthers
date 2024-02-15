@@ -12,6 +12,7 @@ contract SaveEther {
         savings[msg.sender] = savings[msg.sender] + msg.value;
         emit SavingSuccessful(msg.sender, msg.value);
     }
+    
     function withdraw() external {
         require(msg.sender != address(0), "wrong EOA");
         uint256 _userSavings = savings[msg.sender];
